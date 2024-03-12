@@ -2,6 +2,8 @@
 
 This repo is an absolute minimum example of what it takes to load a [Turbo Stream](https://turbo.hotwired.dev/handbook/streams).
 
+![Turbo Example gif](./demo.gif)
+
 ## Download and install
 
 1. have node installed
