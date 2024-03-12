@@ -1,4 +1,5 @@
 import express from 'express';
+const port = process.env.PORT ?? 7155;
 
 const app = express();
 
@@ -25,9 +26,9 @@ app.get('/', function (req, res) {
       </script>
     </head>
     <body>
-      <turbo-stream-source src="http://localhost:7155/sse"></turbo-stream-source>
+      <turbo-stream-source src="http://localhost:${port}/sse"></turbo-stream-source>
       <turbo-frame id="submission">
-        <form method="post" action="http://localhost:7155/item">
+        <form method="post" action="http://localhost:${port}/item">
           <button type="submit">Append another message</button>
         </form>
       </turbo-frame>
@@ -88,6 +89,5 @@ app.get('/sse', function eventsHandler(req, res) {
   });
 });
 
-const port = process.env.PORT ?? 7155;
 app.listen(port, () => {console.log(`listening on ${port}, open a browser to http://localhost:${port}`)});
 
